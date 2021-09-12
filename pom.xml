@@ -84,6 +84,25 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>0.4</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>nimbus-jose-jwt</artifactId>
+			<version>8.14.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.samstevens.totp</groupId>
+			<artifactId>totp</artifactId>
+			<version>1.7</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

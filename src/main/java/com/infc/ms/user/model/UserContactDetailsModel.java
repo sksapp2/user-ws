@@ -1,13 +1,15 @@
-package com.infc.ms.user.dto;
+package com.infc.ms.user.model;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
+@Setter
+@Getter
+@Builder
 
-public class UserContactDetails {
-
+public class UserContactDetailsModel {
     private String mobileNo;
     private String contact;
 
