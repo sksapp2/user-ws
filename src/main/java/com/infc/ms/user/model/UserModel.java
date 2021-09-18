@@ -16,28 +16,15 @@ import java.time.LocalDateTime;
 @ToString
 public class UserModel {
 
-
-
     @Id
     @Column("user_id")
     private BigInteger userId;
-
     @Column("mobile_number")
     private String mobileNumber;
-
-    @Column("operator")
-    private String operator;
-
-    @Column("device_number")
-    private String deviceNumber;
-
     @Column("country_phone_code")
     private String countryPhoneCode;
-
     @Column("created_date_time")
-
     private LocalDateTime createdDateTime;
-
     boolean isNew() {
         return userId == null;
     }

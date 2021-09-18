@@ -12,7 +12,4 @@ import java.util.List;
 public class SignUpResponse {
     private String token;
 
-    public static Object buildErrorResponse(Throwable throwable) {
-        return  null;
-    }
 }

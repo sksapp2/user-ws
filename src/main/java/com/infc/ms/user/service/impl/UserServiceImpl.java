@@ -2,18 +2,17 @@ package com.infc.ms.user.service.impl;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.infc.ms.user.dto.SignUpResponse;
+import com.infc.ms.user.dto.internal.UserDataRequest;
 import com.infc.ms.user.model.UserModel;
 import com.infc.ms.user.respository.UserRepository;
+import com.infc.ms.user.service.JwtService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
-
 import com.infc.ms.user.dto.SignUpRequest;
 import com.infc.ms.user.service.UserService;
 import reactor.core.publisher.Mono;
@@ -25,6 +24,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    JwtService jwtService;
 
     @Override
     public Mono<SignUpResponse> createUser(final SignUpRequest signUpRequest) {
@@ -39,44 +40,34 @@ public class UserServiceImpl implements UserService {
     }
 
     private SignUpResponse generateJwt(UserModel userModel) {
-        return SignUpResponse.builder().token("12322").build();
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("userId", userModel.getUserId());
+        userData.put("mobileNumber", userModel.getMobileNumber());
+        UserDataRequest.builder().data(userData);
+        String token = jwtService.generateJwtToken(UserDataRequest.builder().data(userData).build(), "sasasa");
+        return SignUpResponse.builder().token(token).build();
     }
 
     private Mono<SignUpResponse> generateJwtMono(UserModel userModel) {
         return Mono.just(generateJwt(userModel));
 
     }
+
     private Mono<SignUpResponse> asyncInsertUser(SignUpRequest signUpRequest) {
         log.info("insert into db {}", signUpRequest);
-        String userId = signUpRequest.getMobileNumber() + "-" + signUpRequest.getDeviceNumber();
         UserModel user = UserModel.builder().
                 mobileNumber(signUpRequest.getMobileNumber()).
                 countryPhoneCode(signUpRequest.getCountryPhoneCode()).
-                deviceNumber(signUpRequest.getDeviceNumber()).
                 createdDateTime(LocalDateTime.now(Clock.systemUTC())).
-                operator(signUpRequest.getOperator()).
                 build();
-
         Mono<UserModel> userModelMono = userRepository.save(user).
                 onErrorReturn(UserModel.builder().build()).
                 switchIfEmpty(Mono.just(UserModel.builder().build()));
-
         return userModelMono.flatMap(userDb ->
                         generateJwtMono(userDb))
                 .switchIfEmpty(Mono.defer(() ->
                         Mono.just(SignUpResponse.builder().build())
                 ));
-
-
-    }
-
-    private Mono<SignUpResponse> asyncEmptySignResponse(SignUpRequest u) {
-        return Mono.just(SignUpResponse.builder().build());
-    }
-
-    private void onError(Throwable throwable, Object o) {
-        log.info("exception saving record {}", throwable.getMessage());
-
     }
 
 }
