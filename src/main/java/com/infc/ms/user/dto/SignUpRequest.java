@@ -13,9 +13,10 @@ import java.util.List;
 public class SignUpRequest {
 
 	@NotNull(message = "{user.mobile.notnull}")
-	private String mobileNo;
+	private String mobileNumber;
 
 	private String operator;
+
 
 	//@NotNull(message = "{user.mobile.null}")
 	private String deviceNumber;

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.infc.ms.user.dto.SignUpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -23,10 +24,9 @@ public class UserController {
 
 
     @PostMapping("/signUp")
-    public List<String> createUser(@Valid @RequestBody SignUpRequest request) throws Throwable {
-        List<String> list = new ArrayList<String>();
-        userService.createUser(request);
-        return list;
+    public Mono<SignUpResponse> createUser(@Valid @RequestBody SignUpRequest request) throws Throwable {
+        Mono<SignUpResponse> mono=userService.createUser(request);
+        return mono;
     }
 
 }

@@ -1,16 +1,18 @@
 package com.infc.ms.user.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
-@Setter
-@Getter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
+@ToString
 public class SignUpResponse {
     private String token;
-    private List<String> contacts;
 
+    public static Object buildErrorResponse(Throwable throwable) {
+        return  null;
+    }
 }
