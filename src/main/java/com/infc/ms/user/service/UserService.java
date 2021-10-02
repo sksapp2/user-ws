@@ -9,6 +9,6 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 public interface UserService {
-	Mono<SignUpResponse> createUser (SignUpRequest request);
+	Mono<SignUpResponse> createUser (SignUpRequest request)throws RuntimeException;
 
 }

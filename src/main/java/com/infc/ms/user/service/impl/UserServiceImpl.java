@@ -44,7 +44,8 @@ public class UserServiceImpl implements UserService {
         userData.put("userId", userModel.getUserId());
         userData.put("mobileNumber", userModel.getMobileNumber());
         UserDataRequest.builder().data(userData);
-        String token = jwtService.generateJwtToken(UserDataRequest.builder().data(userData).build(), "sasasa");
+        String token = jwtService.generateJwtToken(UserDataRequest.builder().data(userData).build(),
+                "fdfdfdfasdfSFS34wfsdfsdfSDSD32dfsddDDerQSNCK34SOWEK5354fdgdf44545454");
         return SignUpResponse.builder().token(token).build();
     }
 

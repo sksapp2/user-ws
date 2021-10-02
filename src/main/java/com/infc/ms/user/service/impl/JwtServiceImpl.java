@@ -2,6 +2,8 @@ package com.infc.ms.user.service.impl;
 
 import com.infc.ms.user.dto.internal.UserDataRequest;
 import com.infc.ms.user.service.JwtService;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,8 @@ public class JwtServiceImpl implements JwtService {
     }
 
 
+
+
     private String getToken(Key hmacKey, UserDataRequest userDataRequest) throws RuntimeException {
         String jwtToken = null;
         Objects.requireNonNull(hmacKey,"hmac key is null");
@@ -50,6 +54,19 @@ public class JwtServiceImpl implements JwtService {
             throw th;
         }
         return jwtToken;
+
+    }
+    @Override
+    public String parseToken(String secret,String token) throws RuntimeException {
+        Key hmacKey = new SecretKeySpec(Base64.getDecoder().decode(secret),
+                SignatureAlgorithm.HS256.getJcaName());
+
+        Jws<Claims> jwt = Jwts.parserBuilder()
+                .setSigningKey(hmacKey)
+                .build()
+                .parseClaimsJws(token);
+
+        return jwt.getBody().getId().toString();
 
     }
 

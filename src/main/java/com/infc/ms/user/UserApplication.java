@@ -6,9 +6,7 @@ import org.springframework.boot.autoconfigure.web.reactive.error.ErrorWebFluxAut
 
 @SpringBootApplication(scanBasePackages = "com.infc.ms.*",exclude = ErrorWebFluxAutoConfiguration.class)
 public class UserApplication {
-
 	public static void main(String[] args) {
-
 		SpringApplication.run(UserApplication.class, args);
 	}
 
