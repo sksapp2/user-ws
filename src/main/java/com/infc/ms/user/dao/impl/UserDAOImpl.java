@@ -8,9 +8,7 @@ import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.converters.uni.UniReactorConverters;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.hibernate.Session;
 import org.hibernate.reactive.mutiny.Mutiny;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
@@ -44,8 +42,8 @@ public class UserDAOImpl implements UserDAO {
         return this.sessionFactory.withSession(session ->
                 session.createQuery(query).getResultList().onItem().transform(userModels ->
                      userModels.size()==0?null:userModels.get(0)
-                )
-        );
+                ).onItem().call(session::flush));
+
 
     }
 
