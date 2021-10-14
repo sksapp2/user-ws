@@ -70,6 +70,7 @@ public class UserServiceImpl implements UserService {
         Mono<UserModel> userModelMono = userDAO.saveUser(user).
                 onErrorReturn(UserModel.builder().build()).
                 switchIfEmpty(Mono.just(UserModel.builder().build()));
+
         return userModelMono.flatMap(userDb ->
                         generateJwtMono(userDb))
                 .switchIfEmpty(Mono.defer(() ->
