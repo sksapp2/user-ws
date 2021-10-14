@@ -1,32 +1,41 @@
 package com.infc.ms.user.model;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
 
-import java.math.BigInteger;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Table("user_tbl")
+@Entity
+@Table(name="tm_user")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-public class UserModel {
+public class UserModel extends PanacheEntity implements Serializable {
 
     @Id
-    @Column("user_id")
-    private BigInteger userId;
-    @Column("mobile_number")
+    @Column(name ="user_id")
+    private String userId;
+    @Column(name ="mobile_number")
     private String mobileNumber;
-    @Column("country_phone_code")
+
+    @Column(name="public_key")
+    private String publicKey;
+
+    @Column(name="country_phone_code")
     private String countryPhoneCode;
-    @Column("created_date_time")
+    @Column(name ="created_date_time")
     private LocalDateTime createdDateTime;
-    boolean isNew() {
-        return userId == null;
+
+
+    public static UserModel findByFirstName(String mobileNumber) {
+        return find("mobileNumber", mobileNumber).firstResult();
     }
 
 

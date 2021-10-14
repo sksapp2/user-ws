@@ -1,0 +1,847 @@
+2021-10-10 12:42:44,114 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 12:42:44,130 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 12:42:44,130 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 12:42:44,192 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 12:42:45,286 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 12:42:45,301 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 12:42:52,254 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 12:42:53,973 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 1711 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 12:42:59,395 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 12:43:03,082 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 12:43:03,129 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 24.847 seconds (JVM running for 30.293)
+2021-10-10 12:54:43,261 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 12:54:43,261 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 12:54:43,261 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 12:54:44,308 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 12:54:44,371 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 59 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 12:54:44,933 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 12:54:44,949 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'jwtService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.infc.ms.user.service.JwtService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-10-10 12:54:44,980 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-10 12:54:45,199 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jwtService in com.infc.ms.user.service.impl.UserServiceImpl required a bean of type 'com.infc.ms.user.service.JwtService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.infc.ms.user.service.JwtService' in your configuration.
+
+2021-10-10 12:54:46,839 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 12:54:46,839 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 12:54:46,839 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 12:54:47,558 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 12:54:47,605 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 43 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 12:54:47,996 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 12:54:48,480 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 12:54:48,480 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 1.845 seconds (JVM running for 735.648)
+2021-10-10 12:54:48,480 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2021-10-10 13:25:08,464 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 13:25:08,464 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 13:25:08,479 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 13:25:09,010 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 13:25:09,089 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 73 ms. Found 0 R2DBC repository interfaces.
+2021-10-10 13:25:10,042 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 13:25:10,339 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 13:25:10,354 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 2.354 seconds (JVM running for 2557.516)
+2021-10-10 13:25:10,385 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   MessageSourceAutoConfiguration matched:
+      - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+      - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 13:25:17,651 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 13:25:17,651 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 13:25:17,651 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 13:25:18,526 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 13:25:18,557 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 36 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 13:25:18,932 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 13:25:19,260 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 13:25:19,260 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 1.751 seconds (JVM running for 2566.423)
+2021-10-10 13:25:19,260 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) found beans named messageSource (OnBeanCondition)
+      Matched:
+         - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   ValidationAutoConfiguration#defaultValidator:
+      Did not match:
+         - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) found beans of type 'javax.validation.Validator' validatorFactoryBean (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 16:11:39,408 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 16:11:39,408 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 16:11:39,408 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 16:11:40,036 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 16:11:40,036 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 2 ms. Found 0 R2DBC repository interfaces.
+2021-10-10 16:11:40,861 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 16:11:41,064 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 16:11:41,080 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 1.884 seconds (JVM running for 12553.405)
+2021-10-10 16:11:41,080 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   MessageSourceAutoConfiguration matched:
+      - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+      - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 16:11:46,549 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 16:11:46,549 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 16:11:46,549 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 16:11:46,736 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 16:11:46,767 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 20 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 16:11:46,908 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 16:11:47,064 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 16:11:47,064 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 0.586 seconds (JVM running for 12559.398)
+2021-10-10 16:11:47,080 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) found beans named messageSource (OnBeanCondition)
+      Matched:
+         - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   ValidationAutoConfiguration#defaultValidator:
+      Did not match:
+         - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) found beans of type 'javax.validation.Validator' validatorFactoryBean (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 16:15:54,723 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 16:15:54,723 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 16:15:54,731 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 16:15:55,211 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 16:15:55,211 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 1 ms. Found 0 R2DBC repository interfaces.
+2021-10-10 16:15:55,755 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 16:15:55,779 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 16:15:55,787 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 1.415 seconds (JVM running for 12808.108)
+2021-10-10 16:15:55,787 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   MessageSourceAutoConfiguration matched:
+      - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+      - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 16:16:00,818 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 16:16:00,818 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 16:16:00,818 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 16:16:01,690 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 16:16:01,754 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 66 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 16:16:02,146 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 16:16:02,402 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 16:16:02,410 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 1.706 seconds (JVM running for 12814.735)
+2021-10-10 16:16:02,418 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) found beans named messageSource (OnBeanCondition)
+      Matched:
+         - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   ValidationAutoConfiguration#defaultValidator:
+      Did not match:
+         - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) found beans of type 'javax.validation.Validator' validatorFactoryBean (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 18:07:37,932 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 18:07:37,932 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 18:07:37,932 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 18:07:38,354 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 18:07:38,354 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 1 ms. Found 0 R2DBC repository interfaces.
+2021-10-10 18:07:38,728 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 18:07:38,775 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 18:07:38,791 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 1.104 seconds (JVM running for 19511.134)
+2021-10-10 18:07:38,791 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   MessageSourceAutoConfiguration matched:
+      - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+      - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 18:07:44,698 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8852 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 18:07:44,698 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 18:07:44,698 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 18:07:45,010 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 18:07:45,057 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 39 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 18:07:45,494 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 18:07:45,666 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 18:07:45,666 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 1.212 seconds (JVM running for 19518.017)
+2021-10-10 18:07:45,666 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: messageSource; SearchStrategy: current) found beans named messageSource (OnBeanCondition)
+      Matched:
+         - ResourceBundle found bundle URL [file:/E:/mobile%20microservice%20app/user-ms/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   ValidationAutoConfiguration#defaultValidator:
+      Did not match:
+         - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) found beans of type 'javax.validation.Validator' validatorFactoryBean (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-10-10 18:49:54,897 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 11432 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 18:49:54,913 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 18:49:54,913 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 18:49:54,928 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 18:49:55,127 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 18:49:55,127 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 18:49:56,924 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 18:49:57,361 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 423 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 18:49:59,158 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 18:50:01,439 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 18:50:01,533 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 9.326 seconds (JVM running for 11.417)
+2021-10-10 18:57:29,821 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-10 18:57:29,853 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-10 18:57:33,721 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,440 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-tcp-nio-2] [387d0d35-1] 500 Server Error for HTTP POST "/signUp"
+java.lang.IllegalArgumentException: Illegal base64 character 7b
+	at java.base/java.util.Base64$Decoder.decode0(Base64.java:743)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ Handler com.infc.ms.user.controller.UserController#createUser(SignUpRequest) [DispatcherHandler]
+	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
+Stack trace:
+		at java.base/java.util.Base64$Decoder.decode0(Base64.java:743)
+		at java.base/java.util.Base64$Decoder.decode(Base64.java:535)
+		at java.base/java.util.Base64$Decoder.decode(Base64.java:558)
+		at com.infc.ms.user.service.impl.JwtServiceImpl.generateJwtToken(JwtServiceImpl.java:26)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwt(UserServiceImpl.java:53)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwtMono(UserServiceImpl.java:59)
+		at com.infc.ms.user.service.impl.UserServiceImpl.lambda$createUser$0(UserServiceImpl.java:40)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:358)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:488)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:421)
+		at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:185)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredComplete(FluxUsingWhen.java:405)
+		at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:540)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:495)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:720)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:832)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201)
+		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
+		at reactor.core.publisher.MonoSupplier.subscribe(MonoSupplier.java:62)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:132)
+		at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157)
+		at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291)
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:259)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53)
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:397)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:608)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:465)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:538)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:486)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:430)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onComplete(FluxWindowPredicate.java:310)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:229)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126)
+		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onComplete(DiscardOnCancelSubscriber.java:104)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onComplete(FluxPeekFuseable.java:940)
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onComplete(MonoFlatMapMany.java:260)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onComplete(FluxHandle.java:213)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:134)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
+		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
+		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
+		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
+		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:279)
+		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:388)
+		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:404)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1373)
+		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1236)
+		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+2021-10-10 18:57:34,564 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,600 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,604 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,604 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,608 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,608 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,612 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,624 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:57:34,632 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 18:59:13,179 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 12292 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 18:59:13,210 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 18:59:13,210 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 18:59:13,398 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 18:59:13,694 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 18:59:13,710 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 18:59:15,507 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 18:59:15,819 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 297 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 18:59:17,382 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 18:59:20,152 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 18:59:20,184 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 8.738 seconds (JVM running for 10.772)
+2021-10-10 19:00:10,857 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8296 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 19:00:10,872 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 19:00:10,872 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 19:00:10,919 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 19:00:11,044 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 19:00:11,044 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 19:00:12,544 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 19:00:12,857 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 310 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 19:00:14,484 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 19:00:16,593 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 19:00:16,609 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 7.502 seconds (JVM running for 9.279)
+2021-10-10 19:00:29,097 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-10 19:00:29,113 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-10 19:00:30,833 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:30,977 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-tcp-nio-2] secret : "fdfdfdfasdfSFS34wfsdfsdfSDSD32dfsddDDerQSNCK34SOWEK5354fdgdf44545454"
+2021-10-10 19:00:30,993 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-tcp-nio-2] [be6222e5-1] 500 Server Error for HTTP POST "/signUp"
+java.lang.IllegalArgumentException: Illegal base64 character 22
+	at java.base/java.util.Base64$Decoder.decode0(Base64.java:743)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ Handler com.infc.ms.user.controller.UserController#createUser(SignUpRequest) [DispatcherHandler]
+	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
+Stack trace:
+		at java.base/java.util.Base64$Decoder.decode0(Base64.java:743)
+		at java.base/java.util.Base64$Decoder.decode(Base64.java:535)
+		at java.base/java.util.Base64$Decoder.decode(Base64.java:558)
+		at com.infc.ms.user.service.impl.JwtServiceImpl.generateJwtToken(JwtServiceImpl.java:26)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwt(UserServiceImpl.java:53)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwtMono(UserServiceImpl.java:59)
+		at com.infc.ms.user.service.impl.UserServiceImpl.lambda$createUser$0(UserServiceImpl.java:40)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:358)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:488)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:421)
+		at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:185)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredComplete(FluxUsingWhen.java:405)
+		at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:540)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:495)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:720)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:832)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201)
+		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
+		at reactor.core.publisher.MonoSupplier.subscribe(MonoSupplier.java:62)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:132)
+		at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157)
+		at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291)
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:259)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53)
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:397)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:608)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:465)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:538)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:486)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:430)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onComplete(FluxWindowPredicate.java:310)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:229)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126)
+		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onComplete(DiscardOnCancelSubscriber.java:104)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onComplete(FluxPeekFuseable.java:940)
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onComplete(MonoFlatMapMany.java:260)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onComplete(FluxHandle.java:213)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:134)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
+		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
+		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
+		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
+		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:279)
+		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:388)
+		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:404)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1373)
+		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1236)
+		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+2021-10-10 19:00:31,395 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,410 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,410 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,410 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,410 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,410 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,426 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,426 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:00:31,442 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:23,774 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 14192 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 19:01:23,789 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 19:01:23,789 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 19:01:23,836 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 19:01:23,961 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 19:01:23,977 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 19:01:25,586 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 19:01:26,040 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 440 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 19:01:27,831 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 19:01:30,571 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 19:01:30,586 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 8.73 seconds (JVM running for 10.845)
+2021-10-10 19:01:38,866 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-10 19:01:38,886 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-10 19:01:40,403 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:40,547 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-tcp-nio-2] secret : ksklkdkskskdkdkfSFS34wfsdfsdfSDSD32dfsddDDerQSNCK34SOWEK5354fdgdf44545454ksjkdsjdksjdksdjsk
+2021-10-10 19:01:41,119 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,123 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,127 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,131 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,135 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,135 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,175 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,179 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:01:41,179 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:04:05,861 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=null, deviceNumber=null, countryPhoneCode=121, userContactDetails=null)
+2021-10-10 19:04:05,865 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-10 19:04:05,881 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-tcp-nio-2] secret : ksklkdkskskdkdkfSFS34wfsdfsdfSDSD32dfsddDDerQSNCK34SOWEK5354fdgdf44545454ksjkdsjdksjdksdjsk
+2021-10-10 19:04:14,488 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=124700922, operator=null, deviceNumber=null, countryPhoneCode=121, userContactDetails=null)
+2021-10-10 19:04:14,488 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-10 19:04:14,500 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-tcp-nio-2] insert into db SignUpRequest(mobileNumber=124700922, operator=null, deviceNumber=null, countryPhoneCode=121, userContactDetails=null)
+2021-10-10 19:04:14,656 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-tcp-nio-2] secret : ksklkdkskskdkdkfSFS34wfsdfsdfSDSD32dfsddDDerQSNCK34SOWEK5354fdgdf44545454ksjkdsjdksjdksdjsk
+2021-10-10 19:08:50,468 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 19:08:50,468 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 10880 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 19:08:50,476 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 19:08:50,476 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 19:08:50,772 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 19:08:50,772 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 19:08:52,853 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 19:08:53,174 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 311 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 19:08:54,796 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 19:08:57,022 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 19:08:57,037 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 8.445 seconds (JVM running for 10.177)
+2021-10-10 19:11:48,645 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 13824 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 19:11:48,645 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 19:11:48,645 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 19:11:48,661 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 19:11:48,802 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 19:11:48,802 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 19:11:50,610 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 19:11:51,060 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 431 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 19:11:53,152 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 19:11:56,048 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 19:11:56,065 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 9.225 seconds (JVM running for 10.984)
+2021-10-10 19:15:01,410 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 11712 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 19:15:01,418 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 19:15:01,418 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 19:15:01,446 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 19:15:01,698 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 19:15:01,698 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 19:15:03,710 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 19:15:04,086 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 366 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 19:15:05,874 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 19:15:08,482 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 19:15:08,502 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 9.303 seconds (JVM running for 12.033)
+2021-10-10 19:15:09,389 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-2] sign up user SignUpRequest(mobileNumber=124700922, countryPhoneCode=121)
+2021-10-10 19:15:09,405 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-2] user from db MonoNext
+2021-10-10 19:15:10,969 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,057 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-tcp-nio-2] insert into db SignUpRequest(mobileNumber=124700922, countryPhoneCode=121)
+2021-10-10 19:15:11,161 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-tcp-nio-2] secret : ksklkdkskskdkdkfSFS34wfsdfsdfSDSD32dfsddDDerQSNCK34SOWEK5354fdgdf44545454ksjkdsjdksjdksdjsk
+2021-10-10 19:15:11,661 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,665 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,669 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,669 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,673 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,677 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,681 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,681 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:15:11,689 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-10 19:16:03,417 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 13148 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-10 19:16:03,417 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-10 19:16:03,417 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-10 19:16:03,417 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-10 19:16:03,620 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-10 19:16:03,620 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-10 19:16:05,417 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-10 19:16:05,735 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 307 ms. Found 1 R2DBC repository interfaces.
+2021-10-10 19:16:07,354 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-10 19:16:09,712 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-10 19:16:09,727 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 8.132 seconds (JVM running for 9.852)

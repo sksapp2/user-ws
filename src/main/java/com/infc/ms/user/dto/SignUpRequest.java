@@ -1,7 +1,9 @@
 package com.infc.ms.user.dto;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import lombok.Data;
 import lombok.ToString;
@@ -14,19 +16,10 @@ public class SignUpRequest {
 
 	@NotNull(message = "{user.mobile.notnull}")
 	private String mobileNumber;
-
-	private String operator;
-
-
-	//@NotNull(message = "{user.mobile.null}")
-	private String deviceNumber;
-	
-
-	//@NotNull(message = "{user.country.code.blank}")
+	@NotBlank(message = "{user.country.code.blank}")
+	//@Pattern(regexp = "^[0-9]{5}$",message = "{user.country.phone.code.error}")
 	private String countryPhoneCode;
 
-	private List<UserContactDetails> userContactDetails;
-	
 
 
 }

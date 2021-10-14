@@ -6,8 +6,7 @@ import java.util.stream.Collectors;
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.context.support.DefaultMessageSourceResolvable;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.TransientDataAccessResourceException;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,24 +34,6 @@ public class RestControllerCommonAdvice {
 		return ResponseEntity.badRequest().body(e.getMessage());
 	}
 
-
-
-	@ExceptionHandler(TransientDataAccessResourceException.class)
-	public ResponseEntity<String> handleTransientDataAccessResourceException(TransientDataAccessResourceException e) {
-		return ResponseEntity.internalServerError().body(e.getMessage());
-	}
-
-
-	@ExceptionHandler(DataIntegrityViolationException.class)
-	public ResponseEntity<String> handleDataIntegrityViolationException(DataIntegrityViolationException e) {
-		return ResponseEntity.internalServerError().body(e.getMessage());
-	}
-
-	//DataIntegrityViolationException
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<String> handle(Exception e) {
-		return ResponseEntity.internalServerError().body(e.getMessage());
-	}
 
 
 }

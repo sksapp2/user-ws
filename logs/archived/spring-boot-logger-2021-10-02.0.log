@@ -1,0 +1,337 @@
+2021-10-02 22:24:05,504 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-02 22:24:05,531 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-02 22:24:17,200 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,563 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,604 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,608 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,611 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,618 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,622 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,627 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,632 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:17,642 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:24:18,227 ERROR com.infc.ms.user.service.impl.JwtServiceImpl [reactor-tcp-nio-2] Error in generate token : The specified SecretKey is not strong enough to be used with JWT HMAC signature algorithms.  The JWT specification requires HMAC keys to be >= 256 bits long.  The specified key is 32 bits.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+2021-10-02 22:24:18,243 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-tcp-nio-2] [7c240272-1] 500 Server Error for HTTP POST "/signUp"
+io.jsonwebtoken.security.WeakKeyException: The specified SecretKey is not strong enough to be used with JWT HMAC signature algorithms.  The JWT specification requires HMAC keys to be >= 256 bits long.  The specified key is 32 bits.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+	at io.jsonwebtoken.SignatureAlgorithm.forSigningKey(SignatureAlgorithm.java:590)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ Handler com.infc.ms.user.controller.UserController#createUser(SignUpRequest) [DispatcherHandler]
+	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.jsonwebtoken.SignatureAlgorithm.forSigningKey(SignatureAlgorithm.java:590)
+		at io.jsonwebtoken.impl.DefaultJwtBuilder.signWith(DefaultJwtBuilder.java:114)
+		at com.infc.ms.user.service.impl.JwtServiceImpl.getToken(JwtServiceImpl.java:46)
+		at com.infc.ms.user.service.impl.JwtServiceImpl.generateJwtToken(JwtServiceImpl.java:27)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwt(UserServiceImpl.java:47)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwtMono(UserServiceImpl.java:52)
+		at com.infc.ms.user.service.impl.UserServiceImpl.lambda$createUser$0(UserServiceImpl.java:36)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:358)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:488)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:421)
+		at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:185)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredComplete(FluxUsingWhen.java:405)
+		at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:540)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:495)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:720)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:832)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201)
+		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
+		at reactor.core.publisher.MonoSupplier.subscribe(MonoSupplier.java:62)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:132)
+		at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157)
+		at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291)
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:259)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53)
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:397)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:608)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:465)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:538)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:486)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:430)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onComplete(FluxWindowPredicate.java:310)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:229)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126)
+		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onComplete(DiscardOnCancelSubscriber.java:104)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onComplete(FluxPeekFuseable.java:940)
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onComplete(MonoFlatMapMany.java:260)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onComplete(FluxHandle.java:213)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:134)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
+		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
+		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
+		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
+		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:279)
+		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:388)
+		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:404)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1373)
+		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1236)
+		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+2021-10-02 22:29:09,671 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 11376 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-02 22:29:09,685 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-02 22:29:09,686 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-02 22:29:09,722 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-02 22:29:09,867 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-02 22:29:09,868 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-02 22:29:11,492 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-02 22:29:11,900 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 397 ms. Found 1 R2DBC repository interfaces.
+2021-10-02 22:29:13,531 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-02 22:29:15,661 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-02 22:29:15,682 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 7.829 seconds (JVM running for 9.893)
+2021-10-02 22:33:56,603 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-02 22:33:56,622 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-02 22:33:58,285 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,480 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-tcp-nio-2] [b46826e7-1] 500 Server Error for HTTP POST "/signUp"
+java.lang.IllegalArgumentException: Illegal base64 character 24
+	at java.base/java.util.Base64$Decoder.decode0(Base64.java:743)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ Handler com.infc.ms.user.controller.UserController#createUser(SignUpRequest) [DispatcherHandler]
+	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
+Stack trace:
+		at java.base/java.util.Base64$Decoder.decode0(Base64.java:743)
+		at java.base/java.util.Base64$Decoder.decode(Base64.java:535)
+		at java.base/java.util.Base64$Decoder.decode(Base64.java:558)
+		at com.infc.ms.user.service.impl.JwtServiceImpl.generateJwtToken(JwtServiceImpl.java:25)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwt(UserServiceImpl.java:47)
+		at com.infc.ms.user.service.impl.UserServiceImpl.generateJwtMono(UserServiceImpl.java:52)
+		at com.infc.ms.user.service.impl.UserServiceImpl.lambda$createUser$0(UserServiceImpl.java:36)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:358)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:488)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:421)
+		at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:185)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredComplete(FluxUsingWhen.java:405)
+		at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:540)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2058)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209)
+		at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:495)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:720)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:832)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.Operators.complete(Operators.java:137)
+		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201)
+		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
+		at reactor.core.publisher.MonoSupplier.subscribe(MonoSupplier.java:62)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
+		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:132)
+		at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157)
+		at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291)
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:259)
+		at reactor.core.publisher.Operators.error(Operators.java:198)
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53)
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
+		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:397)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:608)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:588)
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:465)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:538)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:486)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:430)
+		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onComplete(FluxWindowPredicate.java:310)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:229)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126)
+		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onComplete(DiscardOnCancelSubscriber.java:104)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onComplete(FluxPeekFuseable.java:940)
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onComplete(MonoFlatMapMany.java:260)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onComplete(FluxHandle.java:213)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:134)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
+		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
+		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
+		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
+		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:279)
+		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:388)
+		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:404)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1373)
+		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1236)
+		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+2021-10-02 22:33:58,875 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,878 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,886 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,892 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,895 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,904 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,907 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,918 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:33:58,925 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:41,685 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 9448 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-10-02 22:37:41,697 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-10-02 22:37:41,698 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: local
+2021-10-02 22:37:41,745 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-10-02 22:37:41,861 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-02 22:37:41,862 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-02 22:37:43,864 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-02 22:37:44,272 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 397 ms. Found 1 R2DBC repository interfaces.
+2021-10-02 22:37:46,400 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-10-02 22:37:49,033 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2021-10-02 22:37:49,052 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started UserApplication in 9.1 seconds (JVM running for 10.792)
+2021-10-02 22:37:57,122 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-02 22:37:57,140 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-02 22:37:58,592 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,209 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,212 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,215 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,218 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,221 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,224 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,227 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,236 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:37:59,242 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
+2021-10-02 22:38:03,325 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-02 22:38:03,327 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-02 22:38:05,044 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-02 22:38:05,047 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
+2021-10-02 22:38:06,449 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] sign up user SignUpRequest(mobileNumber=1247009, operator=AIRTEL, deviceNumber=12121212, countryPhoneCode=121, userContactDetails=null)
+2021-10-02 22:38:06,450 INFO com.infc.ms.user.service.impl.UserServiceImpl [reactor-http-nio-3] user from db MonoNext
