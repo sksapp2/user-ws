@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
     public Mono<SignUpResponse> createUser(final SignUpRequest signUpRequest) {
         log.info("sign up user {}", signUpRequest);
         Mono<UserModel> user = userDAO.getUserByMobileNumber(signUpRequest.getMobileNumber());
-        log.info("user from db {}", user);
+        log.info("user from db {}", user.log());
         return user.flatMap(userDb ->
                         generateJwtMono(userDb)
                 ).switchIfEmpty(Mono.defer(() -> asyncInsertUser(signUpRequest))).
@@ -54,17 +54,19 @@ public class UserServiceImpl implements UserService {
     }
 
     private Mono<SignUpResponse> generateJwtMono(UserModel userModel) {
+        log.info("token generated ");
         return Mono.just(generateJwt(userModel));
 
     }
 
     private Mono<SignUpResponse> asyncInsertUser(SignUpRequest signUpRequest) {
         log.info("insert into db {}", signUpRequest);
-        UserModel user = UserModel.builder().
+        UserModel user = UserModel.builder().userId(String.valueOf(LocalDateTime.now())).
                 mobileNumber(signUpRequest.getMobileNumber()).
                 countryPhoneCode(signUpRequest.getCountryPhoneCode()).
                 createdDateTime(LocalDateTime.now(Clock.systemUTC())).
                 build();
+        log.info("create new user {}", user);
         Mono<UserModel> userModelMono = userDAO.saveUser(user).
                 onErrorReturn(UserModel.builder().build()).
                 switchIfEmpty(Mono.just(UserModel.builder().build()));

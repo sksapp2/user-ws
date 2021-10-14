@@ -8,7 +8,7 @@
         <properties>
             <!-- mysql -->
             <property name="hibernate.jdbc.time_zone" value="UTC"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/user_ms"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/user_ms?autoReconnect=true"/>
             <!-- Credentials -->
             <property name="javax.persistence.jdbc.user"
                       value="root"/>
@@ -16,11 +16,10 @@
                       value="root"/>
             <!-- The Vert.x SQL Client connection pool size -->
             <property name="hibernate.connection.pool_size"
-                      value="10"/>
-            <!-- Automatic schema export -->
-
-
-            <!-- SQL statement logging -->
+                      value="20"/>
+            <property name="hibernate.c3p0.min_size" value="5" />
+            <property name="hibernate.c3p0.max_size" value="20" />
+            <property name="hibernate.c3p0.timeout" value="300" />
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.highlight_sql" value="true"/>
