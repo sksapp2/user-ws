@@ -34,9 +34,7 @@ public class UserModel extends PanacheEntity implements Serializable {
     private LocalDateTime createdDateTime;
 
 
-    public static UserModel findByFirstName(String mobileNumber) {
-        return find("mobileNumber", mobileNumber).firstResult();
-    }
+
 
 
 }

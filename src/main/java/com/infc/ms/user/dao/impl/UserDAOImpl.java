@@ -20,9 +20,8 @@ public class UserDAOImpl implements UserDAO {
     Mutiny.SessionFactory sessionFactory;
     @Override
     public Mono<UserModel> getUserByMobileNumber(String mobileNumber) {
-
         Objects.requireNonNull(mobileNumber, "mobileNumber can not be null");
-        return Mono.just(UserModel.findByFirstName(mobileNumber));
+        return Mono.just(UserModel.builder().mobileNumber(mobileNumber).build());
     }
 
 
