@@ -16,7 +16,7 @@
                       value="root"/>
             <!-- The Vert.x SQL Client connection pool size -->
             <property name="javax.persistence.schema-generation.database.action"
-                      value="drop-and-create"/>
+                      value="none"/>
 
             <property name="hibernate.vertx.pool.max_wait_queue_size" value="5"/>
             <property name="hibernate.vertx.pool.connect_timeout" value="500" />
