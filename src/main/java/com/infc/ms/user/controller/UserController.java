@@ -28,13 +28,6 @@ public class UserController {
     private UserService userService;
 
 
-    @Autowired
-    UserDAO userDAO;
-    @GetMapping("/signUp")
-    public Mono<UserModel> get() throws Throwable {
-        System.out.println("---------get-------------");
-        return userDAO.getUserByMobileNumber("9958037201","21", UserStatusEnum.ACTIVE.getUserStatus());
-    }
 
     @PostMapping(value = "/signUp",consumes = {"application/json"})
     public Mono<SignUpResponse> createUser(@Valid @RequestBody SignUpRequest request) throws Throwable {
