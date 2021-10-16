@@ -25,7 +25,6 @@ public class MySqlClientConfig {
         connectOptions
                 .setReconnectAttempts(2)
                 .setReconnectInterval(1000).setCachePreparedStatements(true);
-
         return Pool.pool(connectOptions);
     }
 }
