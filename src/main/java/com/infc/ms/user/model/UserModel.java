@@ -1,42 +1,38 @@
 package com.infc.ms.user.model;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-
-import lombok.*;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-
-@Table(name="tm_user")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-@Entity
-public class UserModel  implements Serializable {
 
-    @Id
-    @Column(name ="user_id")
+public class UserModel implements Serializable {
+
+
     private String userId;
 
-    @Column(name ="mobile_number")
+
     private String mobileNumber;
 
-    @Column(name="public_key")
     private String publicKey;
 
-    @Column(name="country_phone_code")
     private String countryPhoneCode;
 
-    @Column(name ="created_date_time")
+    private String deviceId;
+
+
+    private String status;
+
+
     private LocalDateTime createdDateTime;
-
-
 
 
 }

@@ -16,9 +16,9 @@
 	<description>User Microservice</description>
 	<properties>
 		<java.version>11</java.version>
-		<hibernate-reactive.version>1.0.0.CR9</hibernate-reactive.version>
-		<vertx-mysql-client.version>4.1.5</vertx-mysql-client.version>
-
+		<vertx.version>4.1.5</vertx.version>
+		<smallrye-mutiny-vertx-mysql>2.14.2</smallrye-mutiny-vertx-mysql>
+		<mutiny-reactor>1.1.2</mutiny-reactor>
 	</properties>
 
 	<dependencies>
@@ -27,32 +27,11 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>io.vertx</groupId>
-			<artifactId>vertx-mysql-client</artifactId>
-			<version>${vertx-mysql-client.version}</version>
-		</dependency>
+
 
 		<dependency>
-			<groupId>org.hibernate.reactive</groupId>
-			<artifactId>hibernate-reactive-core</artifactId>
-			<version>${hibernate-reactive.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.smallrye.reactive</groupId>
-			<artifactId>mutiny-reactor</artifactId>
-			<version>1.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-jpamodelgen</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>7.0.1.Final</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
 		<dependency>
@@ -61,27 +40,25 @@
 			<optional>true</optional>
 		</dependency>
 
-
-
-
-
 		<dependency>
 			<groupId>com.nimbusds</groupId>
 			<artifactId>nimbus-jose-jwt</artifactId>
 			<version>9.15.2</version>
 		</dependency>
 
-
-
-
-
-
+		<dependency>
+			<groupId>io.smallrye.reactive</groupId>
+			<artifactId>mutiny-reactor</artifactId>
+			<version>${mutiny-reactor}</version>
+		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>io.smallrye.reactive</groupId>
+			<artifactId>smallrye-mutiny-vertx-mysql-client</artifactId>
+			<version>${smallrye-mutiny-vertx-mysql}</version>
 		</dependency>
+
+
 	</dependencies>
 
 

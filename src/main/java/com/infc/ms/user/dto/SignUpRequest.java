@@ -14,12 +14,18 @@ import java.util.List;
 @ToString
 public class SignUpRequest {
 
+	@NotBlank(message = "{user.mobile.notnull}")
 	@NotNull(message = "{user.mobile.notnull}")
 	private String mobileNumber;
 	@NotBlank(message = "{user.country.code.blank}")
 	//@Pattern(regexp = "^[0-9]{5}$",message = "{user.country.phone.code.error}")
 	private String countryPhoneCode;
 
+	@NotBlank(message = "{user.device.number.not.blank}")
+	private String deviceId;
+
+	@NotBlank(message = "{user.device.number.not.blank}")
+	private  String publicKey;
 
 
 }
