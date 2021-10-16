@@ -26,6 +26,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public Mono<UserModel> getUserByMobileNumber(String mobileNumber, String deviceId,String status) {
+        System.out.println("-----------------------------------------------------------------");
         Pool mySQLPool = mySqlClientConfig.mySQLPool();
         log.info("Siz : {}",mySQLPool.size());
         PreparedQuery<RowSet<Row>> preparedStatement = mySQLPool.preparedQuery(Constants.FETCH_USER);
