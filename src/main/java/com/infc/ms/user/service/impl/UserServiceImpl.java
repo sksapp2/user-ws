@@ -10,7 +10,6 @@ import com.infc.ms.user.dto.SignUpResponse;
 import com.infc.ms.user.dto.internal.UserDataRequest;
 import com.infc.ms.user.enums.UserStatusEnum;
 import com.infc.ms.user.model.UserModel;
-import com.infc.ms.user.service.JwtService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,6 +21,7 @@ import reactor.core.publisher.Mono;
 @Service
 @Log4j2
 public class UserServiceImpl implements UserService {
+
 
     @Autowired
     private UserDAO userDAO;

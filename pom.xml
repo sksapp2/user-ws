@@ -16,9 +16,7 @@
 	<description>User Microservice</description>
 	<properties>
 		<java.version>11</java.version>
-		<vertx.version>4.1.5</vertx.version>
-		<smallrye-mutiny-vertx-mysql>2.14.2</smallrye-mutiny-vertx-mysql>
-		<mutiny-reactor>1.1.2</mutiny-reactor>
+		<r2dbc-pool>0.8.7.RELEASE</r2dbc-pool>
 	</properties>
 
 	<dependencies>
@@ -35,10 +33,17 @@
 		</dependency>
 
 		<dependency>
+			<groupId>io.r2dbc</groupId>
+			<artifactId>r2dbc-pool</artifactId>
+			<version>${r2dbc-pool}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 
 		<dependency>
 			<groupId>com.nimbusds</groupId>
@@ -46,17 +51,18 @@
 			<version>9.15.2</version>
 		</dependency>
 
+
 		<dependency>
-			<groupId>io.smallrye.reactive</groupId>
-			<artifactId>mutiny-reactor</artifactId>
-			<version>${mutiny-reactor}</version>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-r2dbc</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>io.smallrye.reactive</groupId>
-			<artifactId>smallrye-mutiny-vertx-mysql-client</artifactId>
-			<version>${smallrye-mutiny-vertx-mysql}</version>
+			<groupId>dev.miku</groupId>
+			<artifactId>r2dbc-mysql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
+
 
 
 	</dependencies>
