@@ -1,4 +1,4 @@
-package com.infc.ms.user.config;
+package com.infc.ms.user.config.common;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

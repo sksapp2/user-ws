@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
+
 import static org.springframework.data.relational.core.query.Criteria.where;
 import static org.springframework.data.relational.core.query.Query.query;
 
@@ -20,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public Mono<UserModel> getUserByMobileNumber(String mobileNumber, String deviceId, String status) {
-       return r2dbcEntityTemplate.select(UserModel.class)
+        return r2dbcEntityTemplate.select(UserModel.class)
                 .from("tm_user")
                 .matching(query(where("mobile_number").is(mobileNumber)
                                 .and("deviceId").is(deviceId).
@@ -32,7 +33,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public Mono<UserModel> saveUser(UserModel userModel) throws Throwable {
+    public Mono<UserModel> saveUser(UserModel userModel) {
         return r2dbcEntityTemplate.insert(userModel);
     }
 

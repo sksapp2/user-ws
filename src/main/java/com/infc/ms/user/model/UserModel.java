@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -20,9 +21,9 @@ import java.time.LocalDateTime;
 @Table("tm_user")
 public class UserModel implements Serializable {
 
+    @Id
     @Column("user_id")
     private String userId;
-
 
     @Column("mobile_number")
     private String mobileNumber;
@@ -32,15 +33,14 @@ public class UserModel implements Serializable {
 
     @Column("country_phone_code")
     private String countryPhoneCode;
+
     @Column("device_id")
-
     private String deviceId;
-    @Column("status")
 
+    @Column("status")
     private String status;
 
     @Column("created_date_time")
-
     private LocalDateTime createdDateTime;
 
 

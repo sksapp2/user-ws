@@ -1,4 +1,4 @@
-package com.infc.ms.user.config;
+package com.infc.ms.user.config.common;
 
 import io.r2dbc.spi.ConnectionFactories;
 import io.r2dbc.spi.ConnectionFactory;
