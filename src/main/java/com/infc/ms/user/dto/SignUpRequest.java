@@ -15,10 +15,11 @@ import java.util.List;
 public class SignUpRequest {
 
 	@NotBlank(message = "{user.mobile.notnull}")
-	@NotNull(message = "{user.mobile.notnull}")
+	@Pattern(regexp = "/\s/g",message = "Space not allowed in mobile number")
 	private String mobileNumber;
-	@NotBlank(message = "{user.country.code.blank}")
-	//@Pattern(regexp = "^[0-9]{5}$",message = "{user.country.phone.code.error}")
+
+	@NotBlank(message = "{user.country.phone.code.not.blank}")
+
 	private String countryPhoneCode;
 
 	@NotBlank(message = "{user.device.number.not.blank}")

@@ -1,552 +1,186 @@
-2021-10-24 00:15:35,763 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 10468 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 00:15:35,779 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-10-24 00:15:35,779 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 00:15:35,826 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 00:15:37,857 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 00:15:37,904 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 42 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 00:15:41,733 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 00:15:41,749 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.494 seconds (JVM running for 8.754)
-2021-10-24 00:15:43,609 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-http-nio-3] [ecd7ef29-1] 500 Server Error for HTTP POST "/signUp"
-java.lang.NullPointerException: null
-	at org.springframework.web.reactive.function.server.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:62)
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
-Stack trace:
-		at org.springframework.web.reactive.function.server.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:62)
-		at org.springframework.web.reactive.DispatcherHandler.invokeHandler(DispatcherHandler.java:171)
-		at org.springframework.web.reactive.DispatcherHandler.lambda$handle$1(DispatcherHandler.java:153)
-		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
-		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
-		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
-		at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.innerNext(FluxConcatMap.java:282)
-		at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:861)
-		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:120)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200)
-		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82)
-		at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:429)
-		at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:219)
-		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:164)
-		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:86)
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
-		at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:449)
-		at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:219)
-		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:164)
-		at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:86)
-		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
-		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4338)
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:255)
-		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51)
-		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
-		at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:915)
-		at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:654)
-		at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:478)
-		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:517)
-		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:208)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
-		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
-		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:311)
-		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:432)
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
-		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
-		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
-		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
-		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-		at java.base/java.lang.Thread.run(Thread.java:834)
-2021-10-24 00:28:23,927 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 11044 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 00:28:23,927 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 00:28:23,943 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-10-24 00:28:23,943 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 00:28:25,833 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 00:28:25,865 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 25 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 00:28:29,420 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 00:28:29,451 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 6.915 seconds (JVM running for 8.27)
-2021-10-24 00:28:45,476 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:28:46,907 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:46,919 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:28:47,406 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,406 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,406 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,406 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,422 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,422 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,422 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,438 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:28:47,438 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:29:47,154 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:29:47,158 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:40:44,206 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 00:40:44,238 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 4308 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 00:40:44,238 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-10-24 00:40:44,238 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 00:40:46,316 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 00:40:46,410 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 87 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 00:40:50,336 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 00:40:50,368 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.716 seconds (JVM running for 9.167)
-2021-10-24 00:41:02,232 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:41:03,690 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:03,702 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:41:03,820 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [INSERT INTO tm_user (user_id, mobile_number, public_key, country_phone_code, device_id, status, created_date_time) VALUES (?, ?, ?, ?, ?, ?, ?)]
-2021-10-24 00:41:04,053 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-tcp-nio-2] [82b24ce3-1] 500 Server Error for HTTP POST "/signUp"
-java.lang.IllegalStateException: Required identifier property not found for class com.infc.ms.user.model.UserModel!
-	at org.springframework.data.mapping.PersistentEntity.getRequiredIdProperty(PersistentEntity.java:106)
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	|_ checkpoint ⇢ Handler com.infc.ms.user.config.routers.UserRouter$$Lambda$610/0x000000010050d440@614785cf [DispatcherHandler]
-	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
-Stack trace:
-		at org.springframework.data.mapping.PersistentEntity.getRequiredIdProperty(PersistentEntity.java:106)
-		at org.springframework.data.r2dbc.convert.MappingR2dbcConverter.lambda$populateIdIfNecessary$1(MappingR2dbcConverter.java:603)
-		at dev.miku.r2dbc.mysql.MySqlResult.lambda$map$2(MySqlResult.java:97)
-		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200)
-		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
-		at reactor.core.publisher.NextProcessor.tryEmitValue(NextProcessor.java:210)
-		at reactor.core.publisher.InternalOneSink.emitValue(InternalOneSink.java:33)
-		at reactor.core.publisher.NextProcessor.onNext(NextProcessor.java:183)
-		at dev.miku.r2dbc.mysql.MySqlResult.lambda$null$3(MySqlResult.java:114)
-		at reactor.core.publisher.LambdaSubscriber.onNext(LambdaSubscriber.java:160)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:668)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:746)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:788)
-		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:239)
-		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:184)
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
-		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onNext(DiscardOnCancelSubscriber.java:70)
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
-		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:250)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200)
-		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:119)
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
-		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
-		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
-		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
-		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
-		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
-		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
-		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:279)
-		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:388)
-		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:404)
-		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
-		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1373)
-		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1236)
-		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
-		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
-		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
-		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
-		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
-		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-		at java.base/java.lang.Thread.run(Thread.java:834)
-2021-10-24 00:41:04,175 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,178 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,181 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,201 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,209 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,216 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,222 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,234 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:41:04,243 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:22,693 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 00:43:22,719 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 3156 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 00:43:22,725 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-10-24 00:43:22,725 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 00:43:25,255 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 00:43:25,290 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 00:43:29,180 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 00:43:29,196 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.166 seconds (JVM running for 9.547)
-2021-10-24 00:43:37,505 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:43:38,952 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:38,966 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:43:39,388 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,391 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,394 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,397 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,399 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,403 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,406 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,409 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:43:39,414 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:44:03,684 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:44:03,687 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:46:58,696 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:46:58,699 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:46:58,755 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [INSERT INTO tm_user (user_id, mobile_number, public_key, country_phone_code, device_id, status, created_date_time) VALUES (?, ?, ?, ?, ?, ?, ?)]
-2021-10-24 00:46:58,867 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-tcp-nio-2] [4b0824ac-11] 500 Server Error for HTTP POST "/signUp"
-java.lang.IllegalStateException: Required identifier property not found for class com.infc.ms.user.model.UserModel!
-	at org.springframework.data.mapping.PersistentEntity.getRequiredIdProperty(PersistentEntity.java:106)
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	|_ checkpoint ⇢ Handler com.infc.ms.user.config.routers.UserRouter$$Lambda$609/0x000000010050d440@f041077 [DispatcherHandler]
-	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
-Stack trace:
-		at org.springframework.data.mapping.PersistentEntity.getRequiredIdProperty(PersistentEntity.java:106)
-		at org.springframework.data.r2dbc.convert.MappingR2dbcConverter.lambda$populateIdIfNecessary$1(MappingR2dbcConverter.java:603)
-		at dev.miku.r2dbc.mysql.MySqlResult.lambda$map$2(MySqlResult.java:97)
-		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200)
-		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
-		at reactor.core.publisher.NextProcessor.tryEmitValue(NextProcessor.java:210)
-		at reactor.core.publisher.InternalOneSink.emitValue(InternalOneSink.java:33)
-		at reactor.core.publisher.NextProcessor.onNext(NextProcessor.java:183)
-		at dev.miku.r2dbc.mysql.MySqlResult.lambda$null$3(MySqlResult.java:114)
-		at reactor.core.publisher.LambdaSubscriber.onNext(LambdaSubscriber.java:160)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:668)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:746)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:788)
-		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:239)
-		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:184)
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
-		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onNext(DiscardOnCancelSubscriber.java:70)
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
-		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:250)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200)
-		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:119)
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
-		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
-		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
-		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
-		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
-		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
-		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
-		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:279)
-		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:388)
-		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:404)
-		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
-		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1373)
-		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1236)
-		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
-		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
-		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
-		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
-		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
-		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-		at java.base/java.lang.Thread.run(Thread.java:834)
-2021-10-24 00:48:18,398 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:48:18,400 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:48:18,410 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [INSERT INTO tm_user (user_id, mobile_number, public_key, country_phone_code, device_id, status, created_date_time) VALUES (?, ?, ?, ?, ?, ?, ?)]
-2021-10-24 00:48:18,476 ERROR org.springframework.web.server.adapter.HttpWebHandlerAdapter [reactor-tcp-nio-2] [4b0824ac-12] 500 Server Error for HTTP POST "/signUp"
-java.lang.IllegalStateException: Required identifier property not found for class com.infc.ms.user.model.UserModel!
-	at org.springframework.data.mapping.PersistentEntity.getRequiredIdProperty(PersistentEntity.java:106)
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	|_ checkpoint ⇢ Handler com.infc.ms.user.config.routers.UserRouter$$Lambda$609/0x000000010050d440@f041077 [DispatcherHandler]
-	|_ checkpoint ⇢ HTTP POST "/signUp" [ExceptionHandlingWebHandler]
-Stack trace:
-		at org.springframework.data.mapping.PersistentEntity.getRequiredIdProperty(PersistentEntity.java:106)
-		at org.springframework.data.r2dbc.convert.MappingR2dbcConverter.lambda$populateIdIfNecessary$1(MappingR2dbcConverter.java:603)
-		at dev.miku.r2dbc.mysql.MySqlResult.lambda$map$2(MySqlResult.java:97)
-		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200)
-		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
-		at reactor.core.publisher.NextProcessor.tryEmitValue(NextProcessor.java:210)
-		at reactor.core.publisher.InternalOneSink.emitValue(InternalOneSink.java:33)
-		at reactor.core.publisher.NextProcessor.onNext(NextProcessor.java:183)
-		at dev.miku.r2dbc.mysql.MySqlResult.lambda$null$3(MySqlResult.java:114)
-		at reactor.core.publisher.LambdaSubscriber.onNext(LambdaSubscriber.java:160)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:668)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:746)
-		at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:788)
-		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:239)
-		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:184)
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
-		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onNext(DiscardOnCancelSubscriber.java:70)
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
-		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:250)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:200)
-		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:119)
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
-		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
-		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
-		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
-		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
-		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
-		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185)
-		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:279)
-		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:388)
-		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:404)
-		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
-		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1373)
-		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1236)
-		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
-		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
-		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
-		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
-		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
-		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
-		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
-		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
-		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-		at java.base/java.lang.Thread.run(Thread.java:834)
-2021-10-24 00:49:05,290 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 00:49:05,275 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 8408 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 00:49:05,290 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.4, Spring v5.3.9
-2021-10-24 00:49:05,290 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 00:49:07,165 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 00:49:07,212 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 33 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 00:49:11,054 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 00:49:11,078 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.235 seconds (JVM running for 8.519)
-2021-10-24 00:52:53,360 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:52:54,755 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:54,767 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:52:55,159 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,159 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,163 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,163 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,167 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,171 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,175 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,191 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:52:55,195 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 00:53:10,185 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:53:10,189 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:53:10,225 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [INSERT INTO tm_user (user_id, mobile_number, public_key, country_phone_code, device_id, status, created_date_time) VALUES (?, ?, ?, ?, ?, ?, ?)]
-2021-10-24 00:53:20,667 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:53:20,667 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:53:28,105 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:53:28,105 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:53:28,113 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [INSERT INTO tm_user (user_id, mobile_number, public_key, country_phone_code, device_id, status, created_date_time) VALUES (?, ?, ?, ?, ?, ?, ?)]
-2021-10-24 00:53:45,902 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:53:45,906 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:53:45,914 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [INSERT INTO tm_user (user_id, mobile_number, public_key, country_phone_code, device_id, status, created_date_time) VALUES (?, ?, ?, ?, ?, ?, ?)]
-2021-10-24 00:54:33,195 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:33,199 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:34,356 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:34,360 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:35,469 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:35,473 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:36,398 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:36,402 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:37,199 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:37,199 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:37,906 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:37,906 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:38,491 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:38,495 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:39,018 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:39,018 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:39,455 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:39,459 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:42,030 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:42,034 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:42,688 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:42,688 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:43,445 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:43,449 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:44,012 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:44,016 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:44,511 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:44,515 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:45,066 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:45,070 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:45,538 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:45,542 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:45,946 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:45,946 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:46,396 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:46,396 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:49,265 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:49,265 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:50,043 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:50,047 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:50,870 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:50,874 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:51,539 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:51,539 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:52,189 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:52,189 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:52,902 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:52,906 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:53,604 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:53,604 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:54,264 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:54,268 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:54,891 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:54,895 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:55,584 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:55,588 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:56,267 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:56,267 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:56,949 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:56,949 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:57,620 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:57,624 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:58,189 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:58,193 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:58,769 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:58,773 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:54:59,480 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:54:59,480 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:00,111 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:00,111 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:00,686 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:00,690 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:01,153 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:01,161 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:01,707 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:01,711 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:02,160 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:02,164 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:02,631 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:02,635 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:03,302 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:03,306 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:03,721 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:03,721 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 00:55:04,276 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 00:55:04,276 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 01:01:10,081 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 380 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 01:01:10,117 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-10-24 01:01:10,132 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 01:01:10,176 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 01:01:12,490 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 01:01:12,522 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 22 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 01:01:15,971 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 01:01:15,986 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.422 seconds (JVM running for 8.916)
-2021-10-24 01:14:58,739 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 1252 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 01:14:58,755 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-10-24 01:14:58,755 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 01:14:58,755 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 01:15:01,312 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 01:15:01,356 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 33 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 01:15:05,573 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 01:15:05,589 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.262 seconds (JVM running for 9.564)
-2021-10-24 01:16:09,579 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 01:16:09,610 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 10660 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 01:16:09,626 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-10-24 01:16:09,626 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 01:16:11,641 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 01:16:11,672 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 23 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 01:16:16,282 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 01:16:16,297 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.318 seconds (JVM running for 9.89)
-2021-10-24 01:16:49,415 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 9928 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 01:16:49,415 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 01:16:49,415 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-10-24 01:16:49,430 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 01:16:51,321 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 01:16:51,368 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 25 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 01:16:54,868 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 01:16:54,883 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 6.887 seconds (JVM running for 9.234)
-2021-10-24 01:17:26,766 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 10740 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
-2021-10-24 01:17:26,828 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-10-24 01:17:26,828 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2021-10-24 01:17:26,906 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2021-10-24 01:17:29,063 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2021-10-24 01:17:29,109 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 25 ms. Found 0 R2DBC repository interfaces.
-2021-10-24 01:17:32,922 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
-2021-10-24 01:17:32,953 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.642 seconds (JVM running for 8.986)
-2021-10-24 01:18:57,986 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 01:18:59,221 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,233 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-tcp-nio-2] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 01:18:59,625 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,629 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,633 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,633 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,633 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,637 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,637 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,645 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:18:59,649 WARN dev.miku.r2dbc.mysql.MySqlConnection [reactor-tcp-nio-2] The server timezone is <India Standard Time> that's unknown, trying to use system default timezone
-2021-10-24 01:19:00,897 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 01:19:00,897 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 01:19:01,966 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 01:19:01,970 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
-2021-10-24 01:19:02,839 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
-2021-10-24 01:19:02,839 DEBUG org.springframework.r2dbc.core.DefaultDatabaseClient$DefaultGenericExecuteSpec [reactor-http-nio-3] Executing SQL statement [SELECT tm_user.* FROM tm_user WHERE tm_user.mobile_number = ? AND tm_user.device_id = ? AND tm_user.status = ? LIMIT 2]
+2021-11-05 00:42:49,922 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 00:42:50,160 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 7204 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 00:42:50,164 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 00:42:50,164 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 00:42:53,291 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 00:42:53,392 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 50 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 00:42:59,338 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 00:42:59,372 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 11.648 seconds (JVM running for 14.126)
+2021-11-05 00:43:07,344 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:43:21,193 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:44:33,416 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 00:44:33,498 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 5620 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 00:44:33,521 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 00:44:33,522 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 00:44:35,349 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 00:44:35,388 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 40 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 00:44:38,823 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 00:44:38,841 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 6.783 seconds (JVM running for 8.433)
+2021-11-05 00:45:24,325 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:46:30,756 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 7424 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 00:46:30,770 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 00:46:30,778 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 00:46:30,758 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 00:46:32,863 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 00:46:32,905 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 00:46:37,096 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 00:46:37,123 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.908 seconds (JVM running for 9.243)
+2021-11-05 00:46:37,723 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : {user.country.code.blank}
+2021-11-05 00:51:24,947 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 00:51:24,972 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 10080 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 00:51:24,977 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 00:51:24,977 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 00:51:27,491 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 00:51:27,544 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 41 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 00:51:31,461 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 00:51:31,482 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.091 seconds (JVM running for 9.508)
+2021-11-05 00:51:33,118 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:51:34,766 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:54:59,641 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:55:00,934 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:55:02,165 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 00:55:03,485 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 01:03:05,138 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:03:05,168 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 13028 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:03:05,171 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:03:05,178 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:03:06,794 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:03:06,830 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:03:10,182 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:03:10,205 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.261 seconds (JVM running for 9.404)
+2021-11-05 01:03:15,281 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 01:03:27,213 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : {user.country.code.blank}
+2021-11-05 01:06:31,006 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 12788 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:06:31,028 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:06:31,030 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:06:31,057 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:06:32,992 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:06:33,039 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 35 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:06:37,947 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:06:37,967 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 9.018 seconds (JVM running for 10.422)
+2021-11-05 01:06:52,966 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:06:55,300 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:08:03,759 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:08:03,800 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 5012 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:08:03,803 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:08:03,810 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:08:06,158 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:08:06,209 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 39 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:08:10,517 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:08:10,542 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.852 seconds (JVM running for 10.492)
+2021-11-05 01:08:15,458 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:08:16,975 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:08:18,637 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:08:24,052 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:11:18,735 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 12196 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:11:18,748 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:11:18,749 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:11:18,781 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:11:20,816 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:11:20,865 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 40 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:11:25,352 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:11:25,379 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.059 seconds (JVM running for 9.441)
+2021-11-05 01:11:26,052 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:11:29,132 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:11:30,402 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:11:31,802 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:11:32,904 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:12:15,723 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:12:15,745 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 9968 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:12:15,749 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:12:15,749 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:12:17,697 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:12:17,737 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:12:21,721 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:12:21,747 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.946 seconds (JVM running for 9.473)
+2021-11-05 01:14:21,589 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:14:21,607 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 11964 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:14:21,610 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:14:21,617 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:14:23,401 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:14:23,444 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 32 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:14:27,664 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:14:27,688 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.663 seconds (JVM running for 9.157)
+2021-11-05 01:14:31,637 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:14:34,855 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:14:35,930 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:14:36,909 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:14:37,995 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:14:38,823 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:16:28,090 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:16:28,101 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 11444 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:16:28,107 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:16:28,114 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:16:30,141 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:16:30,176 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:16:34,954 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:16:34,987 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.373 seconds (JVM running for 9.768)
+2021-11-05 01:16:35,843 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:16:39,739 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:16:53,638 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:17:35,663 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank
+2021-11-05 01:17:43,009 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:17:46,020 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:17:47,174 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:17:51,439 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:17:57,884 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:02,422 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank,countryPhoneCode con not be blank
+2021-11-05 01:18:04,204 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:05,736 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:39,732 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:40,800 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:41,844 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:42,812 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:43,702 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:44,636 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:45,504 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:46,274 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:46,970 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:47,381 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:47,872 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:48,304 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:18:48,744 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:20:10,310 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : countryPhoneCode con not be blank,device number can't be bank
+2021-11-05 01:20:20,317 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
+2021-11-05 01:20:22,188 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
+2021-11-05 01:20:23,431 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
+2021-11-05 01:20:24,452 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
+2021-11-05 01:20:25,526 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
+2021-11-05 01:20:26,451 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
+2021-11-05 01:21:51,321 INFO com.infc.ms.user.handlers.UserHandler [reactor-http-nio-3] token generated 
+2021-11-05 01:21:57,272 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:21:59,029 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:00,271 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:09,990 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:12,733 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:13,767 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:14,841 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:15,679 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:16,348 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:17,211 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:47,980 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:22:49,013 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:23:03,315 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:23:06,950 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:23:08,550 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank
+2021-11-05 01:24:54,134 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:24:54,269 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 7988 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:24:54,271 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:24:54,272 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:24:56,392 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:24:56,436 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 33 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:24:59,750 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:24:59,771 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 7.177 seconds (JVM running for 8.551)
+2021-11-05 01:25:07,638 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-3] Validation error : device number can't be bank,country code should be 5 digit
+2021-11-05 01:25:44,518 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserApplication using Java 11 on DESKTOP-5BBDTSL with PID 11304 (E:\mobile microservice app\user-ms\target\classes started by Santosh in E:\mobile microservice app\user-ms)
+2021-11-05 01:25:44,537 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-05 01:25:44,538 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2021-11-05 01:25:44,569 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2021-11-05 01:25:46,639 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-11-05 01:25:46,675 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 25 ms. Found 0 R2DBC repository interfaces.
+2021-11-05 01:25:50,958 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [main] Netty started on port 8080
+2021-11-05 01:25:50,989 INFO org.springframework.boot.StartupInfoLogger [main] Started UserApplication in 8.028 seconds (JVM running for 9.362)
+2021-11-05 01:25:51,656 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : device number can't be bank
+2021-11-05 01:26:02,586 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : device number can't be bank,country code should be 5 digit
+2021-11-05 01:26:08,718 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : device number can't be bank,country code should be 5 digit
+2021-11-05 01:26:23,975 INFO com.infc.ms.user.common.ValidatorHandler [reactor-http-nio-2] Validation error : device number can't be bank,country code should be 5 digit

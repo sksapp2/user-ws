@@ -4,7 +4,6 @@ import com.infc.ms.user.common.ValidatorHandler;
 import com.infc.ms.user.dao.UserDAO;
 import com.infc.ms.user.dto.SignUpRequest;
 import com.infc.ms.user.dto.SignUpResponse;
-import com.infc.ms.user.dto.internal.UserDataRequest;
 import com.infc.ms.user.enums.UserStatusEnum;
 import com.infc.ms.user.model.UserModel;
 import lombok.RequiredArgsConstructor;
@@ -13,10 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
-import java.time.Clock;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 @RequiredArgsConstructor
@@ -46,41 +42,18 @@ public class UserHandler {
                                 );
                             }))
                     ).
-                    flatMap(userModelMono->{ return
-                     ServerResponse.ok().body(generateJwtMono(userModelMono),SignUpResponse.class);
-                    });
+                    flatMap(userModelMono-> ServerResponse.ok().body(getSignUpResponse(userModelMono),SignUpResponse.class));
 
 
 
     }
 
 
-    private Mono<ServerResponse> createUserAndGenerateToken(SignUpRequest signUpRequest) {
-        UserModel user = UserModel.builder().userId(String.valueOf(LocalDateTime.now())).
-                mobileNumber(signUpRequest.getMobileNumber()).
-                countryPhoneCode(signUpRequest.getCountryPhoneCode()).
-                createdDateTime(LocalDateTime.now(Clock.systemUTC())).
-                publicKey(signUpRequest.getPublicKey()).deviceId(signUpRequest.getDeviceId()).
-                status(UserStatusEnum.ACTIVE.getUserStatus()).
-                build();
-        log.info("create new user {}", user);
-        return ServerResponse.ok().body(userDAO.saveUser(user).flatMap(us -> generateJwtMono(Mono.just(us))),SignUpResponse.class);
 
 
-    }
-
-    private SignUpResponse generateJwt(UserModel userModel) {
-        Map<String, Object> userData = new HashMap<>();
-        userData.put("userId", userModel.getUserId());
-        userData.put("mobileNumber", userModel.getMobileNumber());
-        UserDataRequest.builder().data(userData);
-        String token = String.valueOf(Math.round(1));
-        return SignUpResponse.builder().token(token).build();
-    }
-
-    private Mono<SignUpResponse> generateJwtMono(Mono<UserModel> userModel) {
+    private Mono<SignUpResponse> getSignUpResponse(Mono<UserModel> userModel) {
         log.info("token generated ");
-        return  userModel.map(m->generateJwt(m));
+       return  Mono.fromSupplier(()-> SignUpResponse.builder().message("Welcome").build());
 
     }
 

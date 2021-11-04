@@ -50,20 +50,10 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    private SignUpResponse generateJwt(UserModel userModel) {
-        Map<String, Object> userData = new HashMap<>();
-
-        userData.put("userId", userModel.getUserId());
-        userData.put("mobileNumber", userModel.getMobileNumber());
-        log.info("secret : {}", secret);
-        UserDataRequest.builder().data(userData);
-        String token = String.valueOf(Math.round(1));
-        return SignUpResponse.builder().token(token).build();
-    }
 
     private Mono<SignUpResponse> generateJwtMono(UserModel userModel) {
         log.info("token generated ");
-        return Mono.just(generateJwt(userModel));
+        return Mono.just(SignUpResponse.builder().message("Welcome").build());
 
     }
 

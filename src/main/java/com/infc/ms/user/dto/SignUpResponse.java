@@ -10,6 +10,6 @@ import java.util.List;
 @Builder
 @ToString
 public class SignUpResponse {
-    private String token;
+    private String message;
 
 }
